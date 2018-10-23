@@ -40,6 +40,11 @@ public class UserController {
         return "register";
     }
 
+    @RequestMapping("/quit")
+    public String quit()throws Exception{
+        return "homePage";
+    }
+
     @RequestMapping("/exit")
     public String exit()throws Exception{
         return "../../index";

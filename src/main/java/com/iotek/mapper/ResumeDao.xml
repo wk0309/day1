@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iotek.dao.ResumeDao">
+    <insert id="addResume">
+        INSERT INTO T_RESUME VALUES (
+          RESUME_SEQ.nextval,#{res_nation},#{res_sex},#{res_age},#{res_nation},
+          #{res_politics_status},#{res_height},#{res_education},#{res_school},
+          #{res_major},#{res_native_place},#{res_hobby},#{res_work},#{res_address},
+          #{res_phone},#{res_email},#{res_postcode},#{res_self_assessment},#{user_id}
+        )
+    </insert>
+    <select id="queryByUser" resultType="com.iotek.model.Resume">
+        SELECT * FROM T_RESUME WHERE USER_ID=#{user_id}
+    </select>
+</mapper>
