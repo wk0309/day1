@@ -12,4 +12,7 @@
     <select id="queryByUser" resultType="com.iotek.model.Resume">
         SELECT * FROM T_RESUME WHERE USER_ID=#{user_id}
     </select>
+    <select id="queryById" resultType="com.iotek.model.Resume">
+        SELECT * FROM T_RESUME WHERE RES_ID=#{res_id}
+    </select>
 </mapper>

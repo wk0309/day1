@@ -12,4 +12,5 @@ import java.util.List;
 public interface ResumeService {
     void addResume(Resume resume);
     List<Resume> queryByUser(int user_id);
+    Resume queryById(Resume resume);
 }

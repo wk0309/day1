@@ -23,4 +23,8 @@ public class ResumeServiceImpl implements ResumeService {
     public List<Resume> queryByUser(int user_id) {
         return resumeDao.queryByUser(user_id);
     }
+
+    public Resume queryById(Resume resume) {
+        return resumeDao.queryById(resume);
+    }
 }

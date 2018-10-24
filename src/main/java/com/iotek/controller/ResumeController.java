@@ -41,4 +41,11 @@ public class ResumeController {
         session.setAttribute("resumeList",resumeList);
         return "myResume";
     }
+
+    @RequestMapping("/queryResume")
+    public String queryResume(Resume resume,HttpSession session)throws Exception{
+        Resume resume1=resumeService.queryById(resume);
+        session.setAttribute("resume",resume1);
+        return "updateResume";
+    }
 }
