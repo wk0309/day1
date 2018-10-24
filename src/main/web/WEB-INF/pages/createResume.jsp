@@ -85,6 +85,7 @@
         <a href="/quit">返回</a>
     </form>
     <h3 style="color: red">${requestScope.success}</h3>
+    <p></p>
 
 </div>
 </body>
