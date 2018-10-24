@@ -20,27 +20,27 @@
 <div>
     <c:if test="${empty sessionScope.resumeList || sessionScope.resumeList==null}">
         <h3>暂无简历</h3>
-        <a href="/createResume">添加简历</a>
     </c:if>
     <c:if test="${sessionScope.resumeList!=null}">
-        <table>
+        <table border="1" cellspacing="0">
             <tr>
                 <td>我的简历</td>
                 <td>修改</td>
                 <td>删除</td>
             </tr>
-            <c:forEach items="${sessionScope.resumeList}" var="i">
+            <c:forEach items="${sessionScope.resumeList}" var="resume">
                 <tr>
                     <td>简历</td>
                     <td>
+                        <a href="/queryResume?${resume.res_id}">修改</a>
                         <form action="/queryResume" method="post">
-                            <input type="hidden" name="res_id">
+                            <input type="hidden" name="res_id" value="${resume.res_id}">
                             <input type="submit" value="修改">
                         </form>
                     </td>
                     <td>
                         <form action="" method="post">
-                            <input type="hidden" name="res_id">
+                            <input type="hidden" name="res_id" value="${resume.res_id}">
                             <input type="submit" value="删除">
                         </form>
                     </td>
@@ -48,7 +48,7 @@
             </c:forEach>
         </table>
     </c:if>
-
+    <a href="/createResume">添加简历</a>
     <a href="/quit">返回</a>
 </div>
 </body>

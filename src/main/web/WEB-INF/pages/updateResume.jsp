@@ -82,6 +82,7 @@
             </tr>
         </table>
     </form>
+    <a href="/myResume">返回</a>
 </div>
 </body>
 </html>
