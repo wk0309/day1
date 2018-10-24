@@ -3,7 +3,7 @@
 <mapper namespace="com.iotek.dao.ResumeDao">
     <insert id="addResume">
         INSERT INTO T_RESUME VALUES (
-          RESUME_SEQ.nextval,#{res_nation},#{res_sex},#{res_age},#{res_nation},
+          RESUME_SEQ.nextval,#{res_name},#{res_sex},#{res_age},#{res_nation},
           #{res_politics_status},#{res_height},#{res_education},#{res_school},
           #{res_major},#{res_native_place},#{res_hobby},#{res_work},#{res_address},
           #{res_phone},#{res_email},#{res_postcode},#{res_self_assessment},#{user_id}
@@ -15,4 +15,16 @@
     <select id="queryById" resultType="com.iotek.model.Resume">
         SELECT * FROM T_RESUME WHERE RES_ID=#{res_id}
     </select>
+    <delete id="deleteResume">
+        DELETE FROM T_RESUME WHERE RES_ID=#{res_id}
+    </delete>
+    <update id="updateResume">
+        UPDATE T_RESUME SET RES_NAME=#{res_name},res_sex=#{res_sex},
+        res_age=#{res_age},res_nation=#{res_nation},res_politics_status=#{res_politics_status},
+        res_height=#{res_height},res_education=#{res_education},res_school=#{res_school},
+        res_major=#{res_major},res_native_place=#{res_native_place},
+        res_hobby=#{res_hobby},res_work=#{res_work},res_address=#{res_address},
+        res_phone=#{res_phone},res_email=#{res_email},res_postcode=#{res_postcode},
+        res_self_assessment=#{res_self_assessment} where res_id=#{res_id}
+    </update>
 </mapper>

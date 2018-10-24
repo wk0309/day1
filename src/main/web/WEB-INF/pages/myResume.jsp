@@ -15,6 +15,7 @@
 <head>
     <base href="<%=basePath%>"/>
     <title>Title</title>
+
 </head>
 <body>
 <div>
@@ -32,17 +33,11 @@
                 <tr>
                     <td>简历</td>
                     <td>
-                        <a href="/queryResume?${resume.res_id}">修改</a>
-                        <form action="/queryResume" method="post">
-                            <input type="hidden" name="res_id" value="${resume.res_id}">
-                            <input type="submit" value="修改">
-                        </form>
+                        <a href="/queryResume?res_id=${resume.res_id}">修改</a>
+
                     </td>
                     <td>
-                        <form action="" method="post">
-                            <input type="hidden" name="res_id" value="${resume.res_id}">
-                            <input type="submit" value="删除">
-                        </form>
+                        <a href="/deleteResume?res_id=${resume.res_id}">删除</a>
                     </td>
                 </tr>
             </c:forEach>

@@ -10,5 +10,7 @@ import java.util.List;
 public interface ResumeDao {
     void addResume(Resume resume);
     List<Resume> queryByUser(int user_id);
-    Resume queryById(Resume resume);
+    Resume queryById(int res_id);
+    void deleteResume(int res_id);
+    void updateResume(Resume resume);
 }

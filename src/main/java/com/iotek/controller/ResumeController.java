@@ -43,8 +43,26 @@ public class ResumeController {
     }
 
     @RequestMapping("/queryResume")
-    public String queryResume(Resume resume,HttpSession session)throws Exception{
-        Resume resume1=resumeService.queryById(resume);
+    public String queryResume(int res_id,HttpSession session)throws Exception{
+        Resume resume1=resumeService.queryById(res_id);
+        session.setAttribute("resume",resume1);
+        return "updateResume";
+    }
+
+    @RequestMapping("/deleteResume")
+    public String deleteResume(int res_id,HttpSession session)throws Exception{
+        resumeService.deleteResume(res_id);
+        User user= (User) session.getAttribute("user");
+        List<Resume> resumeList=resumeService.queryByUser(user.getU_id());
+        session.setAttribute("resumeList",resumeList);
+        return "myResume";
+    }
+
+    @RequestMapping("/doUpdate")
+    public String doUpdate(Resume resume,HttpServletRequest request,HttpSession session)throws Exception{
+        resumeService.updateResume(resume);
+        request.setAttribute("success","修改成功");
+        Resume resume1=resumeService.queryById(resume.getRes_id());
         session.setAttribute("resume",resume1);
         return "updateResume";
     }

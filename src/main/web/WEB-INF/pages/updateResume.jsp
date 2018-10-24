@@ -14,11 +14,23 @@
 <head>
     <base href="<%=basePath%>"/>
     <title>Title</title>
+    <style>
+        td{
+            text-align: center;
+        }
+        .td{
+            width: 100px;
+        }
+        input{
+            width: 100px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
-<div>
-    <form action="" method="post">
+<div style="text-align: center">
+    <form action="/doUpdate" method="post">
         <table border="1" cellspacing="0" align="center">
             <tr>
                 <td colspan="6" style="text-align: center;height: 50px">
@@ -55,12 +67,12 @@
             </tr>
             <tr>
                 <td>兴趣爱好</td>
-                <td colspan="5" style="height: 50px"><textarea name="res_hobby"  value="${sessionScope.resume.res_hobby}" style="height: 50px;width: 514px"></textarea></td>
+                <td colspan="5" style="height: 50px"><textarea name="res_hobby"  style="height: 50px;width: 514px">${sessionScope.resume.res_hobby}</textarea></td>
             </tr>
 
             <tr>
                 <td>工作经历</td>
-                <td colspan="5" style="height: 50px"><textarea name="res_work"  value="${sessionScope.resume.res_work}" style="height: 50px;width: 514px"></textarea></td>
+                <td colspan="5" style="height: 50px"><textarea name="res_work" style="height: 50px;width: 514px">${sessionScope.resume.res_work}</textarea></td>
             </tr>
             <tr>
                 <td>通讯地址</td>
@@ -77,12 +89,15 @@
             <tr>
                 <td>自我评价</td>
                 <td colspan="5" style="height: 100px">
-                    <textarea name="res_self_assessment"  value="${sessionScope.resume.res_self_assessment}" style="height: 100px;width: 514px"></textarea>
+                    <textarea name="res_self_assessment" style="height: 100px;width: 514px">${sessionScope.resume.res_self_assessment}</textarea>
                 </td>
             </tr>
         </table>
+        <input type="submit" value="修改">
+        <a href="/myResume">返回</a>
+        <h3 style="color: red">${requestScope.success}</h3>
     </form>
-    <a href="/myResume">返回</a>
+
 </div>
 </body>
 </html>
