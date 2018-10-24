@@ -60,10 +60,12 @@ public class ResumeController {
 
     @RequestMapping("/doUpdate")
     public String doUpdate(Resume resume,HttpServletRequest request,HttpSession session)throws Exception{
+        Resume resume1= (Resume) session.getAttribute("resume");
+        resume.setRes_id(resume1.getRes_id());
         resumeService.updateResume(resume);
         request.setAttribute("success","修改成功");
-        Resume resume1=resumeService.queryById(resume.getRes_id());
-        session.setAttribute("resume",resume1);
+        Resume resume2=resumeService.queryById(resume1.getRes_id());
+        session.setAttribute("resume",resume2);
         return "updateResume";
     }
 }

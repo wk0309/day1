@@ -20,6 +20,7 @@
 <div style="text-align: center">
     <form action="/login" method="post">
         <br/>
+        <br><br>
         <h1 style="color: blue">LOGIN</h1>
         Username<br/>
         <input type="text" name="u_name" required><br/><br/>

@@ -31,7 +31,7 @@
             </tr>
             <c:forEach items="${sessionScope.resumeList}" var="resume">
                 <tr>
-                    <td>简历</td>
+                    <td style="text-align: center">简历${resume.res_id}</td>
                     <td>
                         <a href="/queryResume?res_id=${resume.res_id}">修改</a>
 
